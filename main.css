@@ -445,9 +445,6 @@ nav button {
 }
 
 @media screen and (min-width: 1024px) {
-  body {
-    font-size: 20px;
-  }
   section h2 {
     font-size: 2.2rem;
   }
@@ -480,6 +477,12 @@ nav button {
   .left-nav a {
     width: 1.2em;
     height: 1.2em;
+  }
+}
+
+@media screen and (min-width: 1400) {
+  body {
+    font-size: 20px;
   }
 }
 /* #endregion */
