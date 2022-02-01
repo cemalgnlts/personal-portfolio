@@ -2,7 +2,7 @@
 
 Fimga link: https://www.figma.com/file/YMmlgHJW4vDX53cmAySuiZ/Hostinger-Project
 
-Preview: https://cemalgnlts.io/personal-portfolio
+Preview: https://cemalgnlts.github.io/personal-portfolio
 
 ## Screens
 
