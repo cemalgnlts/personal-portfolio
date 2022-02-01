@@ -101,8 +101,14 @@ header svg {
 .menu .close {
   text-align: right;
   font-size: 2rem;
+  padding-right: 1em;
   cursor: pointer;
   font-weight: bold;
+}
+
+.menu.active {
+  padding-top: 1em;
+  padding-left: 2em;
 }
 
 .menu ul {
@@ -112,7 +118,7 @@ header svg {
 
 .menu a {
   color: #bbb;
-  text-align-last: left;
+  text-align: left;
   text-decoration: none;
   padding-left: 0;
   padding-right: 3em;
