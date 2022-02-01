@@ -1,0 +1,479 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: Aileron;
+  src: url(assets/fonts/aileron-regular.otf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Aileron;
+  src: url(assets/fonts/aileron-bold.otf);
+  font-weight: 700;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: Aileron, sans-serif;
+  background: #17171f;
+  color: #fff;
+}
+
+button {
+  font-family: Aileron, sans-serif;
+  padding: 1em 1.2em;
+  color: #fff;
+  font-weight: 700;
+  background: #3f3fff;
+  border: none;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+section {
+  position: relative;
+  padding: 2em;
+}
+
+section .container > h2 {
+  position: relative;
+  font-size: 1.5rem;
+  margin-bottom: 0.2em;
+}
+
+section .container > h2::before {
+  content: "";
+  position: absolute;
+  top: -0.3em;
+  left: 0;
+  width: 2.5ch;
+  height: 0.25em;
+  border-radius: 16px;
+  background: #3f3fff;
+}
+
+section .container > h2 + p {
+  font-size: 1rem;
+  line-height: 1.6em;
+  color: #9191a4;
+  margin-bottom: 2em;
+}
+
+/* #region Header */
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+  margin-bottom: 5em auto;
+}
+
+header svg {
+  cursor: pointer;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  height: 100%;
+  overflow: hidden;
+  background: #2e2e3d;
+  z-index: 3;
+  padding: 1em 0 2em;
+  transition: right 500ms;
+  min-width: 65%;
+}
+
+.menu .close {
+  text-align: right;
+  font-size: 2rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.menu ul {
+  list-style-type: none;
+  display: inline;
+}
+
+.menu a {
+  color: #bbb;
+  text-align-last: left;
+  text-decoration: none;
+  padding-left: 0;
+  padding-right: 3em;
+  display: block;
+  transition: color 250ms;
+}
+
+.menu a:hover {
+  color: #ffff;
+}
+
+.menu li {
+  margin-bottom: 1.1em;
+}
+
+.menu.active {
+  right: 0;
+}
+
+header h2 {
+  font-size: 1.25rem;
+  line-height: 2em;
+}
+
+nav a {
+  font-size: 1.1rem;
+  line-height: 1.3em;
+}
+
+nav button {
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 0.5em 1em;
+}
+/* #endregion */
+
+/* #region Home */
+#home {
+  text-align: center;
+}
+
+#home h1 {
+  font-size: 2.5rem;
+  line-height: 1.1em;
+}
+
+#home img {
+  width: 100%;
+  z-index: -1;
+  transform: rotateY(180deg);
+}
+
+#home button svg {
+  width: 1.1em;
+  vertical-align: baseline;
+  margin-right: 0.5em;
+}
+
+#home button {
+  font-size: 1.1rem;
+  margin-top: 3em;
+}
+
+.left-nav {
+  position: fixed;
+  display: none;
+  margin-left: -3em;
+  z-index: 5;
+}
+
+.left-nav a {
+  display: block;
+  margin-top: 1em;
+  border-radius: 100%;
+  width: 1.2em;
+  height: 1.2em;
+  border: solid 4px #404053;
+}
+
+.left-nav a.active {
+  background: #3f3fff;
+  border: none;
+}
+/* #endregion */
+
+/* #region My work */
+
+.works {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+}
+
+.works img {
+  width: 100%;
+  object-fit: cover;
+  height: 250px;
+}
+/* #endregion */
+
+/* #region Clients */
+#clients {
+  margin-top: 5em;
+}
+
+.client {
+  border: 1px solid #3a3a47;
+  padding: 1em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.client h3 {
+  font-size: 1.6rem;
+  line-height: 2.3em;
+}
+
+.client img {
+  margin: 2em 0;
+}
+
+.client .tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  justify-content: center;
+}
+
+.client .tags span {
+  font-size: 1rem;
+  line-height: 2.3em;
+  font-weight: 700;
+  background: #3f3f51;
+  padding: 0.5em;
+  border-radius: 4px;
+}
+
+.client p {
+  font-size: 1rem;
+  /* 1.5rem */
+  line-height: 1.5em;
+  /* 2.3em */
+  color: #9191a4;
+  margin: 2em 0;
+}
+/* #endregion */
+
+/* #region Hire me */
+
+#hire-me {
+  margin-top: 5em;
+}
+
+#hire-me .contact {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contact form {
+  width: 100%;
+}
+
+.contact label {
+  display: block;
+  font-size: 1rem;
+  /* 1.5rem */
+  line-height: 2.3em;
+  font-weight: 700;
+}
+
+.contact input,
+.contact textarea {
+  color: #fff;
+  width: 100%;
+  border: 1px solid #565666;
+  background: #2a2a35;
+  margin-bottom: 1.5em;
+  padding: 1em;
+  outline: none;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  border-color: #999 !important;
+}
+
+.contact textarea {
+  resize: none;
+}
+
+.contact button {
+  font-size: 1rem;
+  /* 1.5rem */
+  line-height: 1.25em;
+  font-weight: 700;
+  padding: 0.7em 2em;
+  margin: 1em 0 3em;
+}
+
+.contact-other a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  /* 1.5rem */
+  color: #9191a4;
+}
+
+.contact-other {
+  width: 100%;
+}
+
+.contact-other p {
+  margin-bottom: 1em;
+}
+
+.contact-other div {
+  margin-top: 2em;
+}
+
+.contact-other div img {
+  margin-right: 1em;
+}
+/* #endregion */
+
+/* #region Responsive */
+@media screen and (min-width: 650px) {
+  .close,
+  .menu-icon {
+    display: none;
+  }
+
+  .menu {
+    position: static;
+    background: unset;
+    min-width: unset;
+  }
+
+  .menu li {
+    display: inline;
+    padding: unset;
+    min-width: unset;
+  }
+
+  .menu li a {
+    display: inline;
+    padding: 0.7em;
+  }
+
+  #home img {
+    position: absolute;
+    right: -25%;
+  }
+
+  #my-work {
+    margin-top: 10em;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  #home .container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    text-align: left;
+    align-items: center;
+  }
+
+  #home .content {
+    margin-top: 5em;
+  }
+
+  #home h1 {
+    font-size: 3rem;
+    line-height: 1.2em;
+    margin-right: 5em;
+  }
+
+  #my-work img {
+    width: 50%;
+    flex: 1 0 calc(50% - 1.5em);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  header h2 {
+    font-size: 1.5rem;
+    line-height: 2.3em;
+  }
+
+  section {
+    padding: 2em 5em;
+  }
+
+  section .container > h2 {
+    font-size: 2.3rem;
+  }
+
+  section .container > h2 + p {
+    font-size: 1.5rem;
+  }
+
+  .left-nav {
+    display: block;
+  }
+
+  .client img {
+    width: 10em;
+    margin: 1.5em 0 auto 0;
+    padding: 0 3em;
+  }
+
+  .client .content {
+    padding-left: 2em;
+  }
+
+  #hire-me .contact {
+    flex-wrap: nowrap;
+  }
+
+  #hire-me .contact-other {
+    padding: 2em 5em;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    font-size: 20px;
+  }
+  section h2 {
+    font-size: 2.2rem;
+  }
+
+  section p {
+    font-size: 1.3rem;
+    line-height: 1.5em;
+  }
+
+  #home h1 {
+    font-size: 4rem;
+    line-height: 1.2em;
+  }
+
+  .client {
+    text-align: left;
+    display: flex;
+    padding: 2em;
+  }
+
+  .client p {
+    font-size: 1.3rem;
+    line-height: 1.8em;
+  }
+
+  .client .tags {
+    justify-content: start;
+  }
+
+  .left-nav a {
+    width: 1.2em;
+    height: 1.2em;
+  }
+}
+/* #endregion */
