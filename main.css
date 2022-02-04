@@ -285,9 +285,9 @@ nav button {
 .contact label {
   display: block;
   font-size: 1rem;
-  /* 1.5rem */
   line-height: 2.3em;
   font-weight: 700;
+  margin-top: 1.3em;
 }
 
 .contact input,
@@ -296,8 +296,8 @@ nav button {
   width: 100%;
   border: 1px solid #565666;
   background: #2a2a35;
-  margin-bottom: 1.5em;
-  padding: 1em;
+  padding: 1.2em 1em;
+  margin-top: 0.5em;
   outline: none;
 }
 
@@ -375,9 +375,7 @@ nav button {
   #my-work {
     margin-top: 10em;
   }
-}
-
-@media screen and (min-width: 650px) {
+  
   #home .container {
     position: relative;
     width: 100%;
@@ -441,6 +439,10 @@ nav button {
 
   #hire-me .contact-other {
     padding: 2em 5em;
+  }
+
+  #hire-me .contact label {
+    font-size: 1.3rem;
   }
 }
 
