@@ -14,11 +14,11 @@
         <nav class="menu">
           <div class="close">&times;</div>
           <ul>
-            <li><a href="#home">Home</a></li>
+            <li class="active"><a href="#home">Home</a></li>
             <li><a href="#my-work">My work</a></li>
             <li><a href="#clients">Clients</a></li>
           </ul>
-          <button>Hire me</button>
+          <a href="#hire-me" class="btn">Hire me</a>
         </nav>
         <svg
           width="26"
@@ -39,10 +39,18 @@
     <section id="home">
       <div class="container">
         <div class="left-nav">
-          <a href="#home" class="active"></a>
-          <a href="#my-work"></a>
-          <a href="#clients"></a>
-          <a href="#hire-me"></a>
+          <a href="#home" class="active" data-title="Home">
+            <span>Home</span>
+          </a>
+          <a href="#my-work">
+            <span>My works</span>
+          </a>
+          <a href="#clients">
+            <span>Clients</span>
+          </a>
+          <a href="#hire-me">
+            <span>Hire me</span>
+          </a>
         </div>
         <div class="content">
           <h1 data-section-id="home">

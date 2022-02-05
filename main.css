@@ -28,7 +28,8 @@ body {
   color: #fff;
 }
 
-button {
+button,
+.btn {
   font-family: Aileron, sans-serif;
   padding: 1em 1.2em;
   color: #fff;
@@ -36,6 +37,7 @@ button {
   background: #3f3fff;
   border: none;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .container {
@@ -85,7 +87,7 @@ header svg {
   cursor: pointer;
 }
 
-.menu {
+nav {
   position: fixed;
   top: 0;
   right: -100%;
@@ -98,7 +100,7 @@ header svg {
   min-width: 65%;
 }
 
-.menu .close {
+nav .close {
   text-align: right;
   font-size: 2rem;
   padding-right: 1em;
@@ -106,17 +108,18 @@ header svg {
   font-weight: bold;
 }
 
-.menu.active {
+nav.active {
   padding-top: 1em;
   padding-left: 2em;
+  right: 0;
 }
 
-.menu ul {
+nav ul {
   list-style-type: none;
   display: inline;
 }
 
-.menu a {
+nav li a {
   color: #bbb;
   text-align: left;
   text-decoration: none;
@@ -126,16 +129,12 @@ header svg {
   transition: color 250ms;
 }
 
-.menu a:hover {
+nav li a:hover {
   color: #ffff;
 }
 
-.menu li {
+nav ul li {
   margin-bottom: 1.1em;
-}
-
-.menu.active {
-  right: 0;
 }
 
 header h2 {
@@ -143,12 +142,17 @@ header h2 {
   line-height: 2em;
 }
 
-nav a {
+nav li a {
   font-size: 1.1rem;
   line-height: 1.3em;
 }
 
-nav button {
+nav li.active a {
+  font-weight: bold;
+  color: #a2a2fd;
+}
+
+nav .btn {
   font-size: 1.1rem;
   font-weight: 700;
   padding: 0.5em 1em;
@@ -185,22 +189,61 @@ nav button {
 .left-nav {
   position: fixed;
   display: none;
-  margin-left: -3em;
+  margin-left: -2em;
   z-index: 5;
 }
 
 .left-nav a {
+  position: relative;
   display: block;
   margin-top: 1em;
-  border-radius: 100%;
+  text-decoration: none;
+}
+
+.left-nav a::before {
+  content: "";
+  position: absolute;
+  left: -2em;
+  top: -0.2em;
   width: 1.2em;
   height: 1.2em;
   border: solid 4px #404053;
+  transition: 500ms;
+  border-radius: 100%;
 }
 
-.left-nav a.active {
+.left-nav a:hover span {
+  opacity: 1;
+}
+
+.left-nav span {
+  opacity: 0;
+  position: relative;
+  color: white;
+  background: #222;
+  padding: 0.3em;
+  font-size: 0.8rem;
+  -webkit-transition: opacity 250ms;
+  -o-transition: opacity 250ms;
+  transition: opacity 250ms;
+}
+
+.left-nav span::before {
+  content: "";
+  display: none;
+  left: 0%;
+  top: 0;
+  height: 10px;
+  position: absolute;
+  background: red;
+  border-width: 7px;
+  border-style: solid;
+  border-color: #222 red #222 #222;
+}
+
+.left-nav a.active::before {
   background: #3f3fff;
-  border: none;
+  border-color: #3f3fff;
 }
 /* #endregion */
 
@@ -350,19 +393,19 @@ nav button {
     display: none;
   }
 
-  .menu {
+  nav {
     position: static;
     background: unset;
     min-width: unset;
   }
 
-  .menu li {
+  nav li {
     display: inline;
     padding: unset;
     min-width: unset;
   }
 
-  .menu li a {
+  nav li a {
     display: inline;
     padding: 0.7em;
   }
@@ -375,7 +418,7 @@ nav button {
   #my-work {
     margin-top: 10em;
   }
-  
+
   #home .container {
     position: relative;
     width: 100%;
@@ -476,7 +519,7 @@ nav button {
     justify-content: start;
   }
 
-  .left-nav a {
+  .left-nav span {
     width: 1.2em;
     height: 1.2em;
   }
