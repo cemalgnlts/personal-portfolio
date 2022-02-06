@@ -74,6 +74,10 @@ section .container > h2 + p {
   margin-bottom: 2em;
 }
 
+[id] {
+  scroll-margin-top: 50px;
+}
+
 /* #region Header */
 header .container {
   display: flex;
@@ -92,10 +96,11 @@ nav {
   top: 0;
   right: -100%;
   height: 100%;
-  overflow: hidden;
   background: #2e2e3d;
   z-index: 3;
-  padding: 1em 0 2em;
+  padding: 1em 0 0 2em;
+  -webkit-transition: right 500ms;
+  -o-transition: right 500ms;
   transition: right 500ms;
   min-width: 65%;
 }
@@ -109,8 +114,6 @@ nav .close {
 }
 
 nav.active {
-  padding-top: 1em;
-  padding-left: 2em;
   right: 0;
 }
 
@@ -134,7 +137,7 @@ nav li a:hover {
 }
 
 nav ul li {
-  margin-bottom: 1.1em;
+  margin-bottom: 1.3em;
 }
 
 header h2 {
@@ -208,7 +211,9 @@ nav .btn {
   width: 1.2em;
   height: 1.2em;
   border: solid 4px #404053;
-  transition: 500ms;
+  -webkit-transition: 200ms;
+  -o-transition: 200ms;
+  transition: 200ms;
   border-radius: 100%;
 }
 
@@ -222,7 +227,7 @@ nav .btn {
   color: white;
   background: #222;
   padding: 0.3em;
-  font-size: 0.8rem;
+  font-size: 1rem;
   -webkit-transition: opacity 250ms;
   -o-transition: opacity 250ms;
   transition: opacity 250ms;
@@ -292,7 +297,7 @@ nav .btn {
 }
 
 .client .tags span {
-  font-size: 1rem;
+  font-size: 0.8rem;
   line-height: 2.3em;
   font-weight: 700;
   background: #3f3f51;
@@ -302,9 +307,7 @@ nav .btn {
 
 .client p {
   font-size: 1rem;
-  /* 1.5rem */
   line-height: 1.5em;
-  /* 2.3em */
   color: #9191a4;
   margin: 2em 0;
 }
@@ -342,11 +345,14 @@ nav .btn {
   padding: 1.2em 1em;
   margin-top: 0.5em;
   outline: none;
+  -webkit-transition: border-color 250ms;
+  -o-transition: border-color 250ms;
+  transition: border-color 250ms;
 }
 
 .contact input:focus,
 .contact textarea:focus {
-  border-color: #999 !important;
+  border-color: #888 !important;
 }
 
 .contact textarea {
@@ -355,7 +361,6 @@ nav .btn {
 
 .contact button {
   font-size: 1rem;
-  /* 1.5rem */
   line-height: 1.25em;
   font-weight: 700;
   padding: 0.7em 2em;
@@ -365,7 +370,6 @@ nav .btn {
 .contact-other a {
   text-decoration: none;
   font-size: 1.2rem;
-  /* 1.5rem */
   color: #9191a4;
 }
 
@@ -476,6 +480,10 @@ nav .btn {
     padding-left: 2em;
   }
 
+  .client .tags span {
+    font-size: 0.9rem;
+  }
+
   #hire-me .contact {
     flex-wrap: nowrap;
   }
@@ -518,16 +526,15 @@ nav .btn {
   .client .tags {
     justify-content: start;
   }
-
-  .left-nav span {
-    width: 1.2em;
-    height: 1.2em;
-  }
 }
 
-@media screen and (min-width: 1400) {
+@media screen and (min-width: 2048px) {
   body {
-    font-size: 20px;
+    font-size: 18px;
+  }
+
+  .client .tags span {
+    font-size: 1rem;
   }
 }
 /* #endregion */
