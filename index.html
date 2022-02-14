@@ -83,20 +83,20 @@
 
     <section id="my-work">
       <div class="container">
-        <h2 data-section-id="my-work">My work</h2>
+        <h2>My work</h2>
         <p>
           I’ve had the pleasure of working with multiple Fortune 500 companies,
           designing and implementing both frontend and backend.
         </p>
         <div class="works">
-          <img src="assets/work-1.png" alt="" />
+          <img src="assets/work-1.png" alt="" data-section-id="my-work" />
           <img src="assets/work-3.png" alt="" />
           <img src="assets/work-4.jpeg" alt="" />
           <img src="assets/work-5.jpeg" alt="" />
           <img src="assets/work-6.jpeg" alt="" />
           <img src="assets/work-7.jpeg" alt="" />
           <img src="assets/work-8.jpeg" alt="" />
-          <img src="assets/work-9.jpeg" alt="" />
+          <img src="assets/work-9.jpeg" alt="" data-section-id="my-work" />
           <img src="assets/work-2.jpeg" alt="" />
         </div>
       </div>
@@ -153,7 +153,7 @@
 
     <section id="hire-me">
       <div class="container">
-        <h2 data-section-id="hire-me">Hire me</h2>
+        <h2  data-section-id="hire-me">Hire me</h2>
         <p>Feel free to contact me any time, through any method below.</p>
 
         <div class="contact">
@@ -184,32 +184,36 @@
       const menu = document.querySelector("nav");
       const menuIcon = document.querySelector(".menu-icon");
       const closeIcon = document.querySelector(".close");
-      const dots = document.querySelectorAll(".left-nav > a");
 
       const toggleMenu = () => menu.classList.toggle("active");
-      const onScroll = (ev) => {
-        const headers = Array.from(
-          document.querySelectorAll("[data-section-id]")
-        );
-
-        const [title] = headers.sort(
-          (a, b) =>
-            Math.abs(a.getBoundingClientRect().top) -
-            Math.abs(b.getBoundingClientRect().top)
-        );
-
-        const sectionId = title.dataset.sectionId;
-
-        dots.forEach((dot) => dot.classList.remove("active"));
-
-        document
-          .querySelector(`.left-nav > a[href="#${sectionId}"]`)
-          .classList.add("active");
-      };
-
-      window.addEventListener("scroll", onScroll);
       menuIcon.onclick = toggleMenu;
       closeIcon.onclick = toggleMenu;
+
+      const observer = new IntersectionObserver(entries => {
+        let isHomeIntersecting = false;
+
+        entries.forEach(entry => {
+          if(entry.isIntersecting) {
+            const sectionId = entry.target.dataset.sectionId;
+            
+            if(isHomeIntersecting)
+              return;
+
+            isHomeIntersecting = sectionId === "home";
+
+            document.querySelector(".left-nav > a.active")
+              .classList
+              .remove("active");
+
+            document.querySelector(`.left-nav > a[href="#${sectionId}"]`)
+              .classList
+              .add("active");
+          }
+        });
+      });
+
+      document.querySelectorAll("[data-section-id]")
+      .forEach(el => observer.observe(el));
     </script>
   </body>
 </html>

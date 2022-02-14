@@ -187,6 +187,8 @@ nav .btn {
 #home button {
   font-size: 1.1rem;
   margin-top: 3em;
+  display: flex;
+  align-items: center;
 }
 
 .left-nav {
