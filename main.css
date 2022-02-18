@@ -178,16 +178,16 @@ nav .btn {
   transform: rotateY(180deg);
 }
 
-#home button svg {
+#home .cta svg {
   width: 1.1em;
   vertical-align: baseline;
   margin-right: 0.5em;
 }
 
-#home button {
+#home .cta {
   font-size: 1.1rem;
   margin-top: 3em;
-  display: flex;
+  display: inline-flex;
   align-items: center;
 }
 

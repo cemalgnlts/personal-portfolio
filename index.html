@@ -57,7 +57,7 @@
             Building <br />
             beautify web experiences.
           </h1>
-          <button>
+          <a class="cta btn" href="#my-work">
             <svg
               width="22"
               height="16"
@@ -75,7 +75,7 @@
               />
             </svg>
             <span>My work.</span>
-          </button>
+          </a>
         </div>
         <img src="assets/man.png" alt="Man" />
       </div>
@@ -195,7 +195,7 @@
         entries.forEach(entry => {
           if(entry.isIntersecting) {
             const sectionId = entry.target.dataset.sectionId;
-            
+
             if(isHomeIntersecting)
               return;
 
